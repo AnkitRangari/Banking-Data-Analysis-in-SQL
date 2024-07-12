@@ -37,9 +37,9 @@ The objective was to analyze the banking data to answer the following ten questi
 To achieve these objectives, I performed the following actions:
 
 ### Data Preparation:
--- Loaded the data from the respective tables (Customers, Accounts, Transactions, Branches).
+- Loaded the data from the respective tables (Customers, Accounts, Transactions, Branches).
 
--- Ensured that the relationships between tables were correctly established for accurate querying.
+- Ensured that the relationships between tables were correctly established for accurate querying.
 
 ### Query Development:
 
