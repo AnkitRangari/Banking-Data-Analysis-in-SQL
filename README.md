@@ -1,6 +1,6 @@
 # Banking-Data-Analysis-in-SQL
 
-## Introduction
+## Introduction:
 Welcome to my SQL banking data analysis project! This project delves into a comprehensive dataset comprising Customers, Accounts, Transactions, and Branches tables. By leveraging SQL queries, I sought to uncover valuable insights and answer specific questions that can help a bank enhance its services, detect potential fraud, and optimize operations.
 
 In this project, I used the STAR (Situation, Task, Action, Result) method to structure my approach and findings. The analysis addresses ten critical insights, ranging from identifying inactive customers to calculating average balances and ranking branch performance. The detailed explanation of each step, along with the SQL queries used, provides a clear and actionable understanding of the banking data.
@@ -84,7 +84,7 @@ GROUP BY b.branch_id
 ORDER BY totaldeposit DESC;
 ```
 
-Query 4: Used a subquery to find the maximum deposit amount and joined it with the Customers table to get the customer's name.
+Query 4: Used a group by and order by functionn  to find the maximum deposit amount and joined it with the Customers table to get the customer's name.
 
 ```bash
 SELECT c.customer_id, concat(c.first_name, " " ,c.Last_name) 
@@ -127,7 +127,7 @@ ORDER BY a.customer_id, a.account_number, transaction_year, transaction_month;
 ```
 
 
-Query 7: Summed up daily transaction amounts for the past month.
+Query 7: Summed up daily transaction volume (total amount of all transactions) for the past month.
 
 ```bash
 SELECT DATE(transaction_date) AS dates, 
@@ -138,7 +138,7 @@ GROUP BY  dates
 ORDER BY dates;
 ```
 
-Query 8: Grouped customers by age and calculated the total transaction amount for each group.
+Query 8: Grouped customers by age using case when and calculated the total transaction amount for each age group.
 
 ```bash
 SELECT 
@@ -165,7 +165,7 @@ GROUP BY Branch_id
 ORDER BY average_balance DESC limit 1;
 ```
 
-Query 10: Calculated the average balance per customer at the end of each month using window functions.
+Query 10: Calculated the average balance per customer at the end of each month using joins and subquery.
 
 ```bash
   SELECT 
@@ -191,14 +191,14 @@ GROUP BY
     order by  MONTH(t.transaction_date), YEAR(t.transaction_date);
 ```
 
-## Result
+## Result:
 The analysis provided valuable insights into customer behavior, branch performance, and transaction patterns. Key results included:
 
-A list of inactive customers with recommendations for re-engagement, such as targeted promotions and personalized offers.
-Monthly transaction summaries that helped identify peak transaction periods and customer preferences.
-Branch rankings that highlighted top-performing branches and those needing support.
-Identification of potential fraudulent activities, with a proposed action plan for verification.
-Average transaction metrics that informed customer service improvements and operational adjustments.
-Demographic analysis that guided marketing strategies and product development.
-These insights were documented and shared on GitHub, providing a comprehensive overview of the banking data analysis and enabling stakeholders to make informed decisions.
+- A list of inactive customers with recommendations for re-engagement, such as targeted promotions and personalized offers.
+- Monthly transaction summaries that helped identify peak transaction periods and customer preferences.
+- Branch rankings that highlighted top-performing branches and those needing support.
+- Identification of potential fraudulent activities, with a proposed action plan for verification.
+- Average transaction metrics that informed customer service improvements and operational adjustments.
+- Demographic analysis that guided marketing strategies and product development.
+
 
